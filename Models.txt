@@ -1,0 +1,14 @@
+from django.db import models
+
+# Create your models here.
+class Exceptions(models.Model):
+    name=models.CharField(max_length=100)
+    description=models.CharField(max_length=100)
+    example=models.CharField(max_length=100)
+    hit=models.IntegerField()
+    @classmethod
+    def createException(cls, nam, des, exa,h):
+        exc=cls(name=nam, description=des, example=exa,hit=h)
+        return exc
+    class Meta:
+        ordering=['-hit']
