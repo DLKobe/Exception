@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/static/myApp/js/jquery-3.3.1.min.js"></script>>
+</head>
+<body>
+
+      <h1>异常类信息</h1>
+      <h2>请输入异常类名称：</h2>
+      <input type="text" id="a" name="a">
+      <button id="btn">显示</button>
+      <div id="abc">
+
+       </div>
+      <
+
+      <script type="text/javascript" >
+          $(document).ready(function () {
+    document.getElementById("btn").onclick=
+        function () {
+            var a=$("#a").val();
+            $.ajax({
+                  type:"GET",
+                  url:"/searchexc/",
+                  data:{"a":a},
+                  dataType:"json",
+                  success:function (data,status) {
+                      console.log(data)
+                      var d=data["data"]
+                      for(var i=0;i<d.length;i++)
+                      {
+                          $("#abc").empty()
+                          var $p=$("<p>"+"具体描述：   "+d[i][0]+"</p>")
+                          var $r=$("<p>"+"示例：     "+d[i][1]+"</p>")
+                          $("#abc").append($p)
+                          $("#abc").append($r)
+
+
+
+
+                      }
+                  }
+
+              })
+
+
+
+        }
+
+})
+      </script>
+
+
+
+
+
+
+</body>
+</html>
