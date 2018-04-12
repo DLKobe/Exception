@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据录入</title>
+</head>
+<body>
+      <form action="savefile/"  method="post" enctype="multipart/form-data">
+          <input type="file"  name="myfile"/>
+          <hr/>
+          <input type="submit" value="录入">
+      </form>
+</body>
+</html>
