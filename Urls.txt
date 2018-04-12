@@ -1,0 +1,32 @@
+project\urls
+from django.conf.urls import url,include
+from django.contrib import admin
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+
+    url(r'^', include('myApp.urls',namespace="myApp"))
+]
+
+
+myApp\urls
+from django.conf.urls import url
+
+from . import views
+urlpatterns = [
+    url(r'^upfile/$', views.upfile),
+
+    url(r'^upfile/savefile/$', views.savefile),
+    url(r'^ajaxsearch/$',views.ajaxsearch),
+    url(r'^searchexc/$',views.searchexc,name='searchexc'),
+    url(r'^chart/$',views.chart),
+    url(r'^showchart/$',views.showchart),
+
+
+
+
+
+
+
+
+]
