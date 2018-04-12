@@ -1,0 +1,68 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+import  os
+import csv # 导入csv这个库
+from itertools import islice
+from .models import Exceptions
+# Create your views here.
+
+
+def upfile(request):
+
+    return render(request,'myApp/upfile.html')
+
+def savefile(request):
+    if request.method == "POST":
+        myFile = request.FILES.get("myfile", None)
+        if not myFile:
+            return HttpResponse("no files for upload!")
+        destination = open(os.path.join("D:\\01\\project\\static", myFile.name), 'wb+')
+        for chunk in myFile.chunks():
+            destination.write(chunk)
+
+        destination.close()
+        with open("D:\\01\\project\\static\\3.csv", "r", encoding="utf-8") as f:
+
+            reader = csv.reader(f)
+
+            reader = list(reader)
+
+            for line in islice(reader, 1, None):
+                exc = Exceptions.createException(line[0], line[1], line[2],0)
+                exc.save()
+        return HttpResponse("yes")
+
+def ajaxsearch(request):
+    return render(request,'myApp/search.html')
+
+
+
+
+from django.http import JsonResponse
+
+def searchexc(request):
+    a=str(request.GET.get('a'))
+    exc=Exceptions.objects.get(name=a)
+    list = []
+    # for qaz in exc:
+    list.append([exc.description, exc.example])
+    exc.hit = exc.hit + 1
+    exc.save()
+    return JsonResponse({"data": list})
+
+
+
+
+
+
+
+
+def chart(request):
+    return render(request, 'myApp/chart.html',)
+
+def showchart(request):
+    excs=Exceptions.objects.all()
+    list=[]
+    for exc in excs:
+        list.append([exc.name,exc.hit])
+    return JsonResponse({"data":list})
