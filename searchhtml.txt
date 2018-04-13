@@ -5,22 +5,27 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script type="text/javascript" src="/static/myApp/js/jquery-3.3.1.min.js"></script>>
+    <link rel="stylesheet" href="/static/myApp/css/in.css" type="text/css" />
 </head>
 <body>
 
-      <h1>异常类信息</h1>
-      <h2>请输入异常类名称：</h2>
+      <h1>查询异常类信息</h1>
+      <div id="concent" align="center">
+      <font size="+2" color="#6633CC">请输入异常类名称：</font>
       <input type="text" id="a" name="a">
-      <button id="btn">显示</button>
+          <button id="btn">search</button></div>
+
       <div id="abc">
 
        </div>
-      <
+
+
 
       <script type="text/javascript" >
           $(document).ready(function () {
     document.getElementById("btn").onclick=
-        function () {
+
+        function() {
             var a=$("#a").val();
             $.ajax({
                   type:"GET",
