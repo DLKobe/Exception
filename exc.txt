@@ -1,0 +1,11 @@
+﻿name,description,example
+AssertionError,Raised when an assert statement fails,assert 1+1==2
+OverflowError,Raised when a floating point operation fails,for y in range(1，x):
+AttributeError,Raised when an attribute reference(see Attribute references)or assignment fails,class a():def s;import a;q=a.s
+EOFError,Raised when the input() function hits an end-of-file condition (EOF) without reading,open("D:\\01\\project\\static\\filename.csv"，"r")and the filename is null
+ImportError,Raised when the import statement has troubles trying to load a module and raised when the "from list" in from ... import has a name that cannot be found,import edcrfv the edcrfv does not exist
+IndexError,Raised when a sequence subscript is out of range,s=["a"] s(20)
+KeyError,Raised when a mapping (dictionary) key is not found in the set of existing keys,t={'a':'a'} t['b']
+MemoryError,Raised when an operation runs out of memory but the situation may still be rescued (by deleting some objects),Not enough storage
+NameError,Raised when a local or global name is not found,print(a) but a does not exist
+FloatingPointError,Raised when a floating point operation fails,numpy.seterr:np.seterr(invalid='raise'，over='raise'，under='raise')andc=beta[j，i]+oneminusbeta[j，i]
