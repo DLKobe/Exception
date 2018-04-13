@@ -21,7 +21,7 @@ def savefile(request):
             destination.write(chunk)
 
         destination.close()
-        with open("D:\\01\\project\\static\\3.csv", "r", encoding="utf-8") as f:
+        with open("D:\\01\\project\\static\\"+myFile.name, "r", encoding="utf-8") as f:
 
             reader = csv.reader(f)
 
