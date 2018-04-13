@@ -1,0 +1,12 @@
+#abc{
+height: auto;
+width: 740px;
+padding: 10px;
+
+}
+h1{
+color:#339966;
+font-size:36px;
+
+text-align:center;
+}
