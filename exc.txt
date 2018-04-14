@@ -8,4 +8,9 @@ IndexError,Raised when a sequence subscript is out of range,s=["a"] s(20)
 KeyError,Raised when a mapping (dictionary) key is not found in the set of existing keys,t={'a':'a'} t['b']
 MemoryError,Raised when an operation runs out of memory but the situation may still be rescued (by deleting some objects),Not enough storage
 NameError,Raised when a local or global name is not found,print(a) but a does not exist
+RuntimeError,Raised when an error is detected that doesn’t fall in any of the other categories,5/0
+SyntaxError,Raised when the parser encounters a syntax error,priint(a)
+TypeError,Raised when an operation or function is applied to an object of inappropriate type,class A:def _init_
+UnicodeError,Raised when a Unicode-related encoding or decoding error occurs,use ascii
+ValueError,Raised when a built-in operation or function receives an argument that has the right type but an inappropriate value，and the situation is not described by a more precise exception such as IndexError,int(100，2)
 FloatingPointError,Raised when a floating point operation fails,numpy.seterr:np.seterr(invalid='raise'，over='raise'，under='raise')andc=beta[j，i]+oneminusbeta[j，i]
